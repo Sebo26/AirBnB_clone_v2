@@ -8,10 +8,12 @@ mkdir -p "/data/web_static/releases/"
 mkdir -p "/data/web_static/shared/"
 mkdir -p "/data/web_static/releases/test/"
 touch "/data/web_static/releases/test/index.html"
-ln -s "/data/web_static/current" "/data/web_static/releases/test/"
-chown -R "ubuntu"  "/data/"
-chgrp "ubuntu" "/data/"
+ln -sf "/data/web_static/current" "/data/web_static/releases/test/"
+chown -R ubuntu:ubuntu "/data/"
+tee /etc/nginx/sites-available/web_static <<EOF
 server {
 	location hbnb_static {
 	alias /data/web_static/current/;
 }
+EOF
+sudo service nginx reload
