@@ -7,7 +7,13 @@ mkdir -p "/data/web_static/"
 mkdir -p "/data/web_static/releases/"
 mkdir -p "/data/web_static/shared/"
 mkdir -p "/data/web_static/releases/test/"
-touch "/data/web_static/releases/test/index.html"
+echo "<html>
+  <head>
+  </head>
+  <body>
+    Holberton School
+  </body>
+</html>" | tee "/data/web_static/releases/test/index.html"
 ln -sf "/data/web_static/current" "/data/web_static/releases/test/"
 chown -R ubuntu:ubuntu "/data/"
 tee /etc/nginx/sites-available/web_static <<EOF
@@ -16,5 +22,4 @@ server {
 	alias /data/web_static/current/;
 }
 EOF
-sudo ln -sf /etc/nginx/sites-available/web_static /etc/nginx/sites-enabled/web_static
 sudo service nginx reload
