@@ -2,8 +2,8 @@
 # sets up your web servers for the deployment of web_static
 sudo apt-get update
 sudo apt-get install -y nginx
-mkdir -p "/data/"
-mkdir -p "/data/web_static/"
+mkdir -p /data/
+mkdir -p /data/web_static/
 mkdir -p "/data/web_static/releases/"
 mkdir -p "/data/web_static/shared/"
 mkdir -p "/data/web_static/releases/test/"
@@ -15,7 +15,7 @@ echo "<html>
     Holberton School
   </body>
 </html>" | tee "/data/web_static/releases/test/index.html"
-ln -sf "/data/web_static/current" "/data/web_static/releases/test/"
+ln -s -f "/data/web_static/current" "/data/web_static/releases/test/"
 chown -R ubuntu:ubuntu "/data/"
 tee /etc/nginx/sites-available/web_static <<EOF
 server {
