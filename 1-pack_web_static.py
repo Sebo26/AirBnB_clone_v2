@@ -3,10 +3,10 @@
 Fabric script that generates a .tgz archive
 """
 
-
 from fabric.api import local
 from datetime import datetime
 import os
+
 
 def do_pack():
     """generates a .tgz archive"""
