@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+"""
+Fabric script that generates a .tgz archive
+"""
+
+
 from fabric.api import local
 from datetime import datetime
 import os
 
 def do_pack():
+    """generates a .tgz archive"""
     if not os.path.exists("versions"):
         local("mkdir versions")
     now = datetime.now()
