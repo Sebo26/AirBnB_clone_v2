@@ -16,4 +16,5 @@ server {
 	alias /data/web_static/current/;
 }
 EOF
+sudo ln -sf /etc/nginx/sites-available/web_static /etc/nginx/sites-enabled/web_static
 sudo service nginx reload
