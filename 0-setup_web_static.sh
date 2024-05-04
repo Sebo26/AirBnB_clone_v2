@@ -16,7 +16,7 @@ echo "<html>
   </body>
 </html>" | tee "/data/web_static/releases/test/index.html"
 ln -s -f "/data/web_static/current" "/data/web_static/releases/test/"
-chown -R ubuntu:ubuntu "/data/"
+chown -R ubuntu:ubuntu "/data/web_static/"
 tee /etc/nginx/sites-available/web_static <<EOF
 server {
 	location hbnb_static {
