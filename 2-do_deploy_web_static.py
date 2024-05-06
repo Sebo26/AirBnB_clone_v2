@@ -6,6 +6,7 @@ distributes an archive to web servers
 from fabric.api import run, put, env
 import os
 
+env.hosts = ['xx-web-01', 'xx-web-02']
 
 def do_deploy(archive_path):
     """deploy archive"""
@@ -22,5 +23,4 @@ def do_deploy(archive_path):
     run('rm /tmp/{}'.format(archive_filename))
     run('rm -rf /data/web_static/current')
     run('ln -s {} /data/web_static/current'.format(release_folder))
-    print("New version deployed!")
     return True
