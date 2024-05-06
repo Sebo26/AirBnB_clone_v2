@@ -23,4 +23,5 @@ def do_deploy(archive_path):
     run('rm /tmp/{}'.format(archive_filename))
     run('rm -rf /data/web_static/current')
     run('ln -s {} /data/web_static/current'.format(release_folder))
+    serve_static_files_locally()
     return True
