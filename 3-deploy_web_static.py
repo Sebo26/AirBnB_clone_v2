@@ -4,6 +4,8 @@ Create and distribute archive to web server
 """
 
 from fabric.api import run, put, env
+import 2-do_deploy_web_static
+
 
 
 def deploy():
