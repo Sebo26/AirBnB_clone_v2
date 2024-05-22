@@ -54,7 +54,8 @@ def number_template(n)
     """
     Defines HTML page number
     """
-    return f"<h1>Number: {n}</h1>"
+    html_content = f"<html><body><h1>Number: {n}</h1></body></html>"
+    return render_template_string(html_content)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
