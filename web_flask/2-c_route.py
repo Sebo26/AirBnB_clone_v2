@@ -25,7 +25,7 @@ def hbnb():
 
 
 @app.route('/c/<text>')
-def C_text():
+def c_text(text):
     """
     Defines text
     """
