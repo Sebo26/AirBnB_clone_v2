@@ -13,7 +13,9 @@ def hello_hbnb():
     Defines the home page
     """
     return "Hello HBNB!"
-@app.route('/hbnb')
+
+
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
     Defines hbnb
