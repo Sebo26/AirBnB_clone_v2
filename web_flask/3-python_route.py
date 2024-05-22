@@ -32,7 +32,8 @@ def c_text(text):
     return "C " + text.replace("_", " ")
 
 
-@app.route('/python/<text>', defaults={'text': 'is_cool'})
+@app.route('/python/', defaults={'text': 'is_cool'})
+@app.route('/python/<text>')
 def python_text(text):
     """
     Defines python text route,replacing underscores with spaces
